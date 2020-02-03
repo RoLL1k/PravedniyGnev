@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <title>Оставить отзыв на сайте Праведный гнев</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Уникальная возможность оставить отзыв на сайте для выражения своего гнева или недовольства">
+    <meta name="keywords" content="Оставить,отзыв,лучший,сайт,гнев,опровержение">
+    <link rel="canonical" href="#">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <meta property="og:title" content="Праведный гнев" />
+    <meta property="og:description" content="Уникальная возможность оставить отзыв на сайте для выражения своего гнева или недовольства" />
+    <meta property="og:url" content="http://pravedgnev.ru" />
+    <meta property="og:image" content="images/zast.png" />
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="scrollBar.css">
+    <link rel="stylesheet" href="sharetastic.css">
+
+    <script type="text/javascript" src="js/work_new.js" defer></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/scrollBar.js"></script>
+</head>
+<body id="body_id">
+    <header>
+        <!----------------------------------Блок выбора языка------------------------------------------------------------------>        
+        <ul id="main_list__languages">
+            <li id="list_languages">
+                <div id="change_language">                    
+                    <img src="images/russia.jpg" class="flag_picture" id="flag_picture__selected" alt="Selected flag">
+                    <a title="Select Language" id="select_language__name">Русский</a>
+                    <img src="images/arrow.jpg" id="arrow" alt="Arrow">
+                </div>
+                <ul id="list_languages__down">
+                    <li id="russia_list__id">
+                        <div class="selected_language__container" id="russia_selected__id">                            
+                            <img src="images/russia.jpg" class="flag_picture" id="russia_selected" alt="Russian flag">
+                            <a class="language_name__color" id="russia_selected__name">Русский</a>
+                        </div>    
+                    </li>                        
+                    <li id="english_list__id">
+                        <div class="selected_language__container" id="english_selected__id">                            
+                            <img src="images/english.jpg" class="flag_picture" id="english_selected" alt="English flag">
+                            <a class="language_name__color" id="english_selected__name">English</a>
+                        </div>
+                    </li>                
+                    <li id="germany_list__id">
+                        <div class="selected_language__container" id="germany_selected__id">                                                
+                            <img src="images/germany.jpg" class="flag_picture" id="germany_selected" alt="Germany flag">
+                            <a class="language_name__color" id="germany_selected__name">Deutschland</a>
+                        </div>    
+                    </li>                                            
+                </ul>
+            </li>
+        </ul>                        
+<!----------------------------------Три основные кнопки переключения страниц----------------------------------------------------->        
+        <div id="main_buttons__container">
+            <div class="container_button" id="container_left__button">
+                <a class="push_button" id="main_button1"><div><span id="button1_text__line1">ПРАВЕДНЫЙ ГНЕВ</span></div><div><span id="button1_text__line2">Что это и зачем?</span></div></a>
+            </div>    
+            <div class="container_button">
+                <a class="push_button" id="main_button2"><span id="button2_text__line1">СМОТРЕТЬ</span><span id="button2_text__line2">ПРАВЕДНЫЙ ГНЕВ</span></a>
+            </div>
+            <div class="container_button" id="container_right__button">
+                <a class="push_button" id="main_button3"><span id="button3_text__line1">РАЗМЕСТИТЬ</span><span id="button3_text__line2">ПРАВЕДНЫЙ ГНЕВ</span></a>
+            </div>
+        </div>
+        <div class="container_button main-poz1" id="container_enter">
+            <a class="push_button main-poz1--button" id="main_button__enter"><span id="main_button_enter__text">ВХОД</span></a>
+        </div>
+        <div class="container_button main-poz1" id="container_registration">
+            <a class="push_button main-poz1--button" id="main_button__registration"><span id="main_button_registration__text">РЕГИСТРАЦИЯ</span></a>
+        </div>
+        <div class="container_button main-poz1" id="container_profile">
+            <a class="push_button main-poz1--button" id="main_button__profile"><span id="main_button_profile__text">ПРОФИЛЬ</span></a>
+        </div>
+        <div class="container_button main-poz1" id="container_exit">
+            <a class="push_button main-poz1--button" id="main_button__exit"><span id="main_button_exit__text">ВЫЙТИ</span></a>
+        </div>
+
+
+    </header>
+    <main>
+        <!-------------------Основной экран вывода отзывов------------------------------------------------------->
+        <div id="main-view" class="main-view">     
+            <img class="all-images" src="images/logo4.jpg"> <!--это тег для втставки картинок-->
+            <div id="view-big--photo" class="view-big--photo"><img src="images/close.png" alt="" id="close_button" class="close_button"></div>       
+            <div id="main-anger" class="main-anger">
+                <div id="view-header" class="view-header">
+                    <div id="translate" class="translate">Переводчик</div>
+                    <h3 id="header4" class="header4">ПРАВЕДНЫЙ ГНЕВ</h3>
+                    <div id="container-pict1" class="container-pict1">
+                        <div class="sharetastic sharetastic--simple"></div>    
+                        <img src="images/mail3.jpg" id="pic-mail" class="pic-mail" alt="Электронная почта">
+                    </div>    
+                </div>
+                <div id="block-review4" class="block-review4">
+                    <p id="block-review4--dop" class="block-review4--dop"></p>
+                </div>
+                <div id="spis-container" class="spis-container">
+                    <form class="form_input" name="form3">
+                        <textarea name="auth_msg3" id="user_rebuttal3" maxlength="25000" readonly autofocus class="user_rebuttal"></textarea><br>                
+                    </form>    
+                </div>           
+            </div>
+            <div class="elements-container6">
+                <div class="punch read-position" id="read">
+                    <a class="punch_button" id="read_dop">ЧИТАТЬ ОПРОВЕРЖЕНИЕ</a>
+                </div>        
+                <div class="photo_main">
+                    <div class="wrapper1" id="wrapper_left"><span>◀</span></div>
+                    <div class="photo1_dop">
+                        <div class="photo" id="photo1"><span class="text-photo">ФОТО</span></div>
+                        <div class="photo" id="photo2"><span class="text-photo">ФОТО</span></div>
+                        <div class="photo" id="photo3"><span class="text-photo">ФОТО</span></div>
+                        <div class="photo" id="photo4"><span class="text-photo">ФОТО</span></div>                
+                    </div>
+                    <div class="wrapper1" id="wrapper_right"><span>▶</span></div>
+                </div>                
+                <div class="punch place-position" id="place">
+                    <a class="punch_button" id="place_dop">РАЗМЕСТИТЬ ОПРОВЕРЖЕНИЕ</a>
+                </div>                          
+            </div>
+        </div>  
+        <div class="punch ret-position" id="ret2">
+            <a class="punch_button" id="ret_dop2">Назад</a>
+        </div> 
+
+
+
+
+
+    </main>
+    <footer></footer>
+</body>
+</html>

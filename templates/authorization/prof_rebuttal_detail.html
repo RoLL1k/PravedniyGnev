@@ -1,0 +1,26 @@
+{% extends "authorization/profile.html" %}
+{% load thumbnail %}
+
+
+{% block area %}
+<div class="main-profile-window">
+<h2 id="name-profile-window">ОПРОВЕРЖЕНИЕ: {{ reb.title|title }}</h2>
+<hr>
+    <div style="background-color: white; width: 1000px; margin: auto;">
+        <h3>{{ reb.title }}</h3>
+        <div>{{ reb.content }}</div>
+        {% for img in img_set %}
+            <img src="{% thumbnail img.image 'default' %}" alt="">
+        {% endfor %}
+         <p>Стоимость: {{ reb.price }} руб.</p>
+        <p>{{ reb.author }} - {{ reb.created_at }}</p>
+        <div style="background-color: orange; width: 1000px; margin: auto;">
+            {% if user.pk == reb.author.pk %}
+                {% if user.is_authenticated %}
+                    <p><a href="{% url 'ReviewApp:update_rebuttal' rev_pk=rev_pk reb_pk=reb.pk %}">Редактировать опровержение</a></p>
+                    <p><a href="{% url 'ReviewApp:prof_rebuttal_delete' rev_pk=rev_pk reb_pk=reb.pk %}">Удалить опровержение</a></p>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

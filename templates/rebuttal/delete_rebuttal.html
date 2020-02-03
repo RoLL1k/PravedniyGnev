@@ -1,0 +1,12 @@
+{% extends 'main/index.html' %}
+
+
+{% block content %}
+<div style="background-color: white; width: 1000px; margin: auto;">
+    <h2>Удалить опровержение: </h2> <h3>{{ rev.title }}</h3>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Удалить">
+    </form>
+</div>
+{% endblock %}

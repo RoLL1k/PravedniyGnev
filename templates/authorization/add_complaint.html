@@ -1,0 +1,22 @@
+{% extends "authorization/profile.html" %}
+
+
+{% block area %}
+
+<div class="main-form--screen">
+    <h3 class="form-header">ЖАЛОБА АДМИНИСТРАЦИИ</h3>
+    <form id="form-position3" method="post">
+        {% csrf_token %}
+        <p class="form-text3">Заголовок сообщения:</p>
+        {{ form.title }}
+        <p class="form-text3">Текст сообщения:</p>
+        {{ form.body }}
+        {{ form.user_id }}
+        {{ form.created_at }}
+        <div class="punch-form" id="button3-form--position">
+            <input type="submit" class="punch-button--form" id="fn-but_dop" value="Отправить">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'main/index.html' %}
+
+
+{% block content %}
+<div style="background-color: white; width: 1000px; margin: auto;">
+    <h2>Редактирование опровержения</h2>
+    <form method="post"  enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ formset.as_p }}
+        <input type="hidden" name="next" value="{% url 'ReviewApp:get_rebuttal_detail' rev_pk=rev_pk reb_pk=reb_pk %}">
+        <p><input type="submit" value="Update rebuttal"></p>
+    </form>
+</div>
+{% endblock %}

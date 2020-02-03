@@ -1,0 +1,26 @@
+{% extends "authorization/profile.html" %}
+
+
+{% block area %}
+<div class="main-form--screen">
+    <h3 class="form-header">ИЗМЕНЕНИЕ ДАННЫХ ПРОФИЛЯ</h3>
+    <form class="form-flex" method="post">
+        {% csrf_token %}
+        <p class="form-text">Логин:</p>
+        {{ form.username }}
+        {% if form.username.errors %}
+        <p class="form-text">{{ form.username.errors }}</p>
+        {% endif%}
+        <p class="form-text">e-mail:</p>
+        {{ form.email }}
+        {% if form.email.errors %}
+        <p class="form-text">{{ form.email.errors }}</p>
+        {% endif%}
+        <p class="form-text last">Слать оповещения о новых комментариях? {{ form.send_messages }}</p>
+        <div class="punch-form" id="button2-form--position">
+            <input type="submit" class="punch-button--form" id="fn-but_dop" value="Изменить">
+        </div>
+    </form>
+
+</div>
+{% endblock %}

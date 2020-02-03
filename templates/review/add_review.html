@@ -1,0 +1,14 @@
+{% extends 'main/index.html' %}
+
+
+{% block content %}
+<div style="background-color: white; width: 1000px; margin: auto;">
+    <h2>Добавление отзыва</h2>
+    <form method="post"  enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ formset.as_p }}
+        <p><input type="submit" value="Add review"></p>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+﻿{% extends "main/index.html" %}
+
+
+{% block content %}
+
+<div class="main-form--screen" id="form1-autor">
+    <h3 class="form-header">АВТОРИЗАЦИЯ</h3>
+    <form class="form1-position" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            {{ field }}
+        {% endfor %}
+        {% if form.non_field_errors %}
+            {{ form.non_field_errors }}
+        {% else %}
+        <ul><li></li></ul>
+        {% endif %}
+        <div class="punch-form" id="button1-form--position">
+            <input type="submit" class="punch-button--form" id="fn-but_dop" value="Войти">
+        </div>
+    </form>
+    <p class="form-text last last-position"><a href="{% url 'ReviewApp:password_reset' %}">Забыли пароль?</a><span>&brvbar;</span><a href="{% url 'ReviewApp:register' %}">Регистрация</a></p>
+</div>
+{% endblock %}
+

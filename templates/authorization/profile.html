@@ -1,0 +1,51 @@
+{% extends "main/index.html" %}
+
+
+{% block content %}
+<!--<div style="background: white; margin: auto; border-radius: 5px;">-->
+<!--    <h2>Профиль пользователя {{ user.username }}</h2>-->
+<!--    <a href="{% url 'ReviewApp:profile_reviews' %}">Мои отзывы</a>-->
+<!--    <a href="{% url 'ReviewApp:profile_rebuttals' %}">Мои опровержения</a>-->
+<!--    <a href="{% url 'ReviewApp:profile_rebuttals_on_me' %}">Опровержения на меня</a>-->
+<!--    <a href="">Уведомления от администратора</a><br>-->
+<!--    <a href="{% url 'ReviewApp:change_user_info' %}">Изменение личный данных</a><br>-->
+<!--    <a href="{% url 'ReviewApp:password_reset' %}">Смена пароля</a><br>-->
+<!--    <a href="{% url 'ReviewApp:add_complaint' %}">Написать разработчикам</a>-->
+
+<!--    {% for message in messages %}-->
+<!--        {% if message %}-->
+<!--            <p>{{ message }}</p>-->
+<!--        {% endif %}-->
+<!--    {% endfor %}-->
+<!--</div>-->
+        <div id="main-profile-buttons">
+            <div class="container_button profile-poz" id="profile-container-but1">
+                <a class="push_button profile-poz--buttons" id="profile-but1" href="{% url 'ReviewApp:profile_reviews' %}"><span id="profile-but1--text">Мой ПРАВЕДНЫЙ ГНЕВ</span></a>
+            </div>
+            <div class="container_button profile-poz" id="profile-container-but2">
+                <a class="push_button profile-poz--buttons" id="profile-but2" href="{% url 'ReviewApp:profile_rebuttals' %}"><span id="profile-but2--text">Мои ОПРОВЕРЖЕНИЯ</span></a>
+            </div>
+            <div class="container_button profile-poz" id="profile-container-but3">
+                <a class="push_button profile-poz--buttons" id="profile-but3" href="{% url 'ReviewApp:profile_rebuttals_on_me' %}"><span id="profile-but3--text">ОПРОВЕРЖЕНИЯ на мой ПРАВЕДНЫЙ ГНЕВ</span></a>
+            </div>
+            <div class="container_button profile-poz" id="profile-container-but4">
+                <a class="push_button profile-poz--buttons" id="profile-but4" href=""><span id="profile-but4--text">УВЕДОМЛЕНИЯ ОТ АДМИНИСТРАЦИИ САЙТА</span></a>
+            </div>
+        </div>
+        <div class="container_button profile-poz2" id="profile-container-but5">
+            <a class="push_button profile-poz2--buttons" id="profile-but5" href="{% url 'ReviewApp:change_user_info' %}"><span id="profile-but5--text">ИЗМЕНЕНИЕ ЛИЧНЫХ ДАННЫХ</span></a>
+            <a class="push_button profile-poz2--buttons" id="profile-but6" href="{% url 'ReviewApp:password_change' %}"><span id="profile-but6--text">СМЕНА ПАРОЛЯ</span></a>
+        </div>
+        <div class="container_button profile-poz2" id="profile-container-but6">
+            <a class="push_button profile-poz2--buttons" id="profile-but7" href="{% url 'ReviewApp:add_complaint' %}"><span id="profile-but7--text">ЖАЛОБА АДМИНИСТРАЦИИ САЙТА</span></a>
+        </div>
+
+            {% block area %}
+
+            {% endblock %}
+            {% for message in messages %}
+                {% if message %}
+                        <h3 id="name-profile-window">{{ message }}</h3>
+                {% endif %}
+            {% endfor %}
+{% endblock %}

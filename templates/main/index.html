@@ -1,0 +1,100 @@
+{% load static %}
+{% load bootstrap4 %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>{% block title %}Оставить отзыв на сайте Праведный гнев{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Уникальная возможность оставить отзыв на сайте для выражения своего гнева или недовольства">
+    <meta name="keywords" content="Оставить,отзыв,лучший,сайт,гнев,опровержение">
+    <link rel="canonical" href="#">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
+    <meta property="og:title" content="Праведный гнев" />
+    <meta property="og:description" content="Уникальная возможность оставить отзыв на сайте для выражения своего гнева или недовольства" />
+    <meta property="og:url" content="http://pravedgnev.ru" />
+    <meta property="og:image" content="{% static 'images/zast.png' %}" />
+
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'forms.css' %}">
+    <link rel="stylesheet" href="{% static 'scrollBar.css' %}">
+    <link rel="stylesheet" href="{% static 'sharetastic.css' %}">
+    <link rel="stylesheet" href="{% static 'pay_form.css' %}">
+
+    <script type="text/javascript" src="{% static 'js/work_new.js' %}" defer></script>
+    <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/scrollBar.js' %}"></script>
+
+</head>
+<body id="body_id" style="background-image: url({% static 'images/zast.png' %})">
+    <header>
+<!----------------------------------Блок выбора языка------------------------------------------------------------------>        
+        <ul id="main_list__languages">
+            <li id="list_languages">
+                <div id="change_language">                    
+                    <img src="{% static 'images/russia.jpg' %}" class="flag_picture" id="flag_picture__selected" alt="Selected flag">
+                    <a title="Select Language" id="select_language__name">Русский</a>
+                    <img src="{% static 'images/arrow.jpg' %}" id="arrow" alt="Arrow">
+                </div>
+                <ul id="list_languages__down">
+                    <li id="russia_list__id">
+                        <div class="selected_language__container" id="russia_selected__id">                            
+                            <img src="{% static 'images/russia.jpg' %}" class="flag_picture" id="russia_selected" alt="Russian flag">
+                            <a class="language_name__color" id="russia_selected__name">Русский</a>
+                        </div>    
+                    </li>                        
+                    <li id="english_list__id">
+                        <div class="selected_language__container" id="english_selected__id">                            
+                            <img src="{% static 'images/english.jpg' %}" class="flag_picture" id="english_selected" alt="English flag">
+                            <a class="language_name__color" id="english_selected__name">English</a>
+                        </div>
+                    </li>                
+                    <li id="germany_list__id">
+                        <div class="selected_language__container" id="germany_selected__id">                                                
+                            <img src="{% static 'images/germany.jpg' %}" class="flag_picture" id="germany_selected" alt="Germany flag">
+                            <a class="language_name__color" id="germany_selected__name">Deutschland</a>
+                        </div>    
+                    </li>                                            
+                </ul>
+            </li>
+        </ul>                        
+<!----------------------------------Три основные кнопки переключения страниц----------------------------------------------------->        
+        <div id="main_buttons__container">
+            <div class="container_button" id="container_left__button">
+                <a class="push_button" id="main_button1" href="{% url 'ReviewApp:get_info' %}"><div><span id="button1_text__line1">ПРАВЕДНЫЙ ГНЕВ</span></div><div><span id="button1_text__line2">Что это и зачем?</span></div></a>
+            </div>    
+            <div class="container_button">
+                <a class="push_button" id="main_button2" href="{% url 'ReviewApp:get_reviews_list' %}"><span id="button2_text__line1">СМОТРЕТЬ</span><span id="button2_text__line2">ПРАВЕДНЫЙ ГНЕВ</span></a>
+            </div>
+            <div class="container_button" id="container_right__button">
+                <a class="push_button" id="main_button3" href="{% url 'ReviewApp:add_review' %}"><span id="button3_text__line1">РАЗМЕСТИТЬ</span><span id="button3_text__line2">ПРАВЕДНЫЙ ГНЕВ</span></a>
+            </div>
+        </div>
+        {% if user.is_authenticated %}
+            <div class="container_button main-poz1" id="container_profile">
+                <a class="push_button main-poz1--button" id="main_button__profile" href="{% url 'ReviewApp:profile' %}"><span id="main_button_profile__text">ПРОФИЛЬ</span></a>
+            </div>
+            <div class="container_button main-poz1" id="container_exit">
+                <a class="push_button main-poz1--button" id="main_button__exit" href="{% url 'ReviewApp:logout' %}"><span id="main_button_exit__text">ВЫЙТИ</span></a>
+            </div>
+        {% else %}
+            <div class="container_button main-poz1" id="container_enter">
+                <a class="push_button main-poz1--button" id="main_button__enter" href="{% url 'ReviewApp:login' %}"><span id="main_button_enter__text">ВХОД</span></a>
+            </div>
+
+            <div class="container_button main-poz1" id="container_registration">
+                <a class="push_button main-poz1--button" id="main_button__registration" href="{% url 'ReviewApp:register' %}"><span id="main_button_registration__text">РЕГИСТРАЦИЯ</span></a>
+            </div>
+        {% endif %}
+    </header>
+    <main>
+        {% block content %}
+
+        {% endblock%}
+    </main>
+
+</body>
+</html>

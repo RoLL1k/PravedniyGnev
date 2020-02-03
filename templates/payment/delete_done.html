@@ -1,0 +1,23 @@
+{% extends "main/index.html" %}
+
+{% block title %}Success{% endblock %}
+
+{% block content %}
+       <!-----------------------------------Блок оплаты гнева------------------------------------->
+       <div id="anger-last" class="main-view">
+            <div id="main-anger--last" class="main-anger">
+                <div id="view-header--last" class="view-header2">
+                    <h3 id="header-last" class="header4">ПРАВЕДНЫЙ ГНЕВ</h3>
+                </div>
+                <div id="block-anger--last" class="block-review4">
+                    <p id="block-anger--dop" class="block-review4--dop"></p>
+                </div>
+                <div id="spis-container--last" class="spis-container9">
+                    <p id="text-pay--last" class="text-pay">УСПЕШНО УДАЛЁН</p>
+                </div>
+            </div>
+            <div class="punch last-position2" id="close_button__last">
+                <a class="punch_button" id="close_button__last2" href="{% url 'ReviewApp:get_reviews_list' %}">Вернуться к списку</a>
+            </div>
+        </div>
+{% endblock %}

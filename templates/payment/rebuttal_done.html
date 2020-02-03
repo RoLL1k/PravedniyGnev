@@ -1,0 +1,24 @@
+{% extends "main/index.html" %}
+
+{% block title %}Success{% endblock %}
+
+{% block content %}
+<!-----------------------Последний экран опровержения-------------------------------------->
+
+        <div id="rebuttal-last" class="main-view">
+            <div id="main-anger6" class="main-anger">
+                <div id="view-header9" class="view-header2">
+                    <h3 id="header9" class="header4">ОПРОВЕРЖЕНИЕ ПРАВЕДНОГО ГНЕВА</h3>
+                </div>
+                <div id="block-rebuttal5" class="block-review4">
+                    <p id="block-rebuttal5--dop" class="block-review4--dop"></p>
+                </div>
+                <div id="spis-container9" class="spis-container9">
+                    <p id="text-pay2" class="text-pay">ОПРОВЕРЖЕНИЕ ПРАВЕДНОГО ГНЕВА УСПЕШНО РАЗМЕЩЕНО</p>
+                </div>
+            </div>
+            <div class="punch last-position2" id="close_button9">
+                <a class="punch_button" id="close_button_dop9" href="{% url 'ReviewApp:get_rebuttal_detail' rev_pk=request.session.review_id reb_pk=request.session.rebuttal_id %}">Вернуться к ОПРОВЕРЖЕНИЮ</a>
+            </div>
+        </div>
+{% endblock %}

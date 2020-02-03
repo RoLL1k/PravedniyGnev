@@ -1,0 +1,46 @@
+{% extends "main/index.html" %}
+
+
+{% block content %}
+<div class="main-form--screen" id="form2-autor">
+        <h3 class="form-header">РЕГИСТРАЦИЯ</h3>
+        <form class="form-flex" method="post">
+            {% csrf_token %}
+            <p class="form-text">Логин:</p>
+            {{ form.username }}
+            {% if form.username.errors %}
+                {{ form.username.errors }}
+            {% else %}
+            <ul><li></li></ul>
+            {% endif%}
+            <p class="form-text">E-mail:</p>
+            {{ form.email }}
+            {% if form.email.errors %}
+                {{ form.email.errors }}
+            {% else %}
+            <ul><li></li></ul>
+            {% endif%}
+            <p class="form-text">Пароль:</p>
+            {{ form.password1 }}
+            {% if form.password1.errors %}
+                {{ form.password1.errors }}
+            {% else %}
+            <ul><li></li></ul>
+            {% endif%}
+            <p class="form-text"></p>
+            {{ form.password2 }}
+            {% if form.password2.errors %}
+                {{ form.password2.errors }}
+            {% else %}
+            <ul><li></li></ul>
+            {% endif%}
+            <p class="form-text last">Слать оповещения о новых комментариях? {{ form.send_messages }}</p>
+            <div class="punch-form" id="button2-form--position">
+                <input type="submit" class="punch-button--form" id="fn-but_dop" value="Регистрация">
+            </div>
+        </form>
+
+    </div>
+
+
+{% endblock %}

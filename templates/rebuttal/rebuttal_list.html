@@ -1,0 +1,26 @@
+{% extends 'main/index.html' %}
+
+
+{% block content %}
+    <div id="page2_1" class="page2_1">
+        <div id="text2_1" class="text2_1">
+            <div class="text_page_2_1" id="text_page_2_1">
+                {% for reb in rebs %}
+                    {% if reb.is_active %}
+                        {% if reb.is_paid %}
+                        <span class="block_review{{reb.price}} test_hight block_review_line">
+                            <span class="span_prom"></span>
+                            <span class="span_price" id="spanPrices">
+                                <a href="{% url 'ReviewApp:get_rebuttal_detail' rev_pk=rev_pk reb_pk=reb.pk %}">
+                                    Оплачено за размещение {{ reb.price }} руб.
+                                </a>
+                            </span>
+                            <span class="span_name" id="targetName">{{ reb.title }}</span><span class="span_prom2"></span>
+                        </span>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

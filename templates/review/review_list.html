@@ -1,0 +1,27 @@
+{% extends "main/index.html" %}
+
+
+
+{% block content %}
+    <div id="page2_1" class="page2_1">
+        <div id="text2_1" class="text2_1">
+            <div class="text_page_2_1" id="text_page_2_1">
+                {% for rev in revs %}
+                    {% if rev.is_active %}
+                        {% if rev.is_paid %}
+                        <span class="block_review{{rev.price}} test_hight block_review_line" >
+                            <span class="span_prom"></span>
+                            <span class="span_price" id="spanPrices"><a href="{% url 'ReviewApp:get_review_detail' pk=rev.pk %}">Оплачено за размещение {{ rev.price }} руб.</a></span>
+                            <span class="span_name" id="targetName"><a href="{% url 'ReviewApp:get_review_detail' pk=rev.pk %}">{{ rev.title }}</a></span>
+                            <span class="span_prom2"></span>
+                        </span>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="punch punch-position" id="find2">
+        <a class="punch_button" id="find_dop">Поиск</a>
+    </div>
+{% endblock %}

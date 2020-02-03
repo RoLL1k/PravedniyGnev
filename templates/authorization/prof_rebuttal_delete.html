@@ -1,0 +1,16 @@
+{% extends "authorization/profile.html" %}
+
+
+{% block area %}
+<div class="main-profile-window">
+<h2 id="name-profile-window">Удалить: {{ reb.title|title }}</h2>
+<hr>
+<div style="background-color: white; width: 1000px; margin: auto;">
+    <h2>Вы уверены что хотите удалить отровержение "{{ reb.title|title }}"?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Да, удалить">
+    </form>
+</div>
+</div>
+{% endblock %}

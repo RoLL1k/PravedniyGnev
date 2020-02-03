@@ -1,0 +1,27 @@
+{% extends "authorization/profile.html" %}
+
+
+{% block area %}
+<div class="main-profile-window">
+<h2 id="name-profile-window">Мой ПРАВДЕНЫЙ ГНЕВ</h2>
+<hr>
+<!--    <div id="page2_1" class="page2_1">-->
+<!--        <div id="text2_1" class="text2_1">-->
+            <div class="text_page_2_1" id="text_page_2_1">
+                {% for rev in revs %}
+                    {% if rev.is_active %}
+                        {% if rev.is_paid %}
+                        <span class="block_review{{rev.price}} block_review_line">
+                        {% else %}
+                        <span style="background-color: white;">
+                        {% endif %}
+                            <span class="span_prom"></span>
+                            <span class="span_price" id="spanPrices"><a href="{% url 'ReviewApp:prof_review_detail' pk=rev.pk %}">Оплачено за размещение {{ rev.price }} руб.</a></span>
+                            <span class="span_name" id="targetName">{{ rev.title }}</span><span class="span_prom2"></span>
+                        </span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+<!--        </div>-->
+</div>
+{% endblock %}
