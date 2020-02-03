@@ -173,6 +173,8 @@ THUMBNAIL_ALIASES = {
 }
 THUMBNAIL_BASEDIR = 'thumbnails'
 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
