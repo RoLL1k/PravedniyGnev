@@ -15,18 +15,18 @@ from braintree import Configuration, Environment
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+# PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'l5&&0jh4z%mwly$_qm4_&t3z^v#eci9dyh#fxj@vbuwamuwydd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['PravedGnev.pythonanywhere.com']
 
 
 # Application definition
@@ -141,9 +141,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'djangotest232@gmail.com'
-EMAIL_HOST_PASSWORD = 'Stomatius10K'
-DEFAULT_FROM_EMAIL = 'djangotest232@gmail.com'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = ''
 
 
 BRAINTREE_MERCHANT_ID = 'xmc67wk9j2vdxm3m'
@@ -173,13 +173,11 @@ THUMBNAIL_ALIASES = {
 }
 THUMBNAIL_BASEDIR = 'thumbnails'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 

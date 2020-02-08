@@ -10,11 +10,17 @@ from django.views.generic import CreateView, UpdateView
 from django.contrib import messages
 from .forms import RegisterUserForm, ReviewForm, AIFormSet, RebuttalForm, AIRebFormSet, LoginForm, ChangeUserInfoForm, \
     ProfPasswordChangeForm, UserPasswordResetForm, UserSetPasswordForm, ComSugForm
-from .models import Review, AdvUser, Rebuttal
+from .models import Review, AdvUser, Rebuttal, AdditionalImage
+from .utilities import get_timestamp_name
 from django.contrib.auth.views import LoginView, PasswordChangeView, PasswordResetView, PasswordResetConfirmView, \
     PasswordResetDoneView, PasswordResetCompleteView
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View
+from base64 import b64decode
+from django.core.files.base import ContentFile
+
+
+kassa_id = '5e3bf2a11ae1bd2a008b4574'
 
 
 def main(request):
@@ -49,12 +55,28 @@ class ReviewCreate(LoginRequiredMixin, View):
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
             review = form.save()
-            formset = AIFormSet(request.POST, request.FILES, instance=review)
-            if formset.is_valid():
-                formset.save()
-                request.session['review_id'] = form.save().id
-                return redirect(reverse('payment:process'))  # на страницу оплаты
-        return render(request, "review/add_review.html", context={"form": form, "formset": formset})
+            i = 0
+            while i < 20:
+                b64_text = request.POST.get('image-{}'.format(i))
+                if b64_text == '':
+                    break
+                else:
+                    img_format, imgstr = b64_text.split(';base64,')
+                    image_data = b64decode(imgstr)
+                    ext = img_format.split('/')[-1]
+                    filename = get_timestamp_name(ext)
+                    image = AdditionalImage.objects.create(review=review, image=ContentFile(image_data, filename))
+                    image.save()
+                    request.session['review_id'] = form.save().id
+                    i += 1
+            return redirect('payment:get_payment_form', pk=review.id)  # на страницу оплаты
+        return render(request, "review/add_review.html", context={"form": form})
+            # formset = AIFormSet(request.POST, request.FILES, instance=review)
+            # if formset.is_valid():
+            #     formset.save()
+            #     request.session['review_id'] = form.save().id
+            #     return redirect('payment:get_payment_form', pk=review.id)  # на страницу оплаты
+        # return render(request, "review/add_review.html", context={"form": form, "formset": formset})
 
 
 class ReviewUpdate(LoginRequiredMixin, View):

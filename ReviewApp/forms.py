@@ -5,11 +5,13 @@ from django.core.exceptions import ValidationError
 from django.core.validators import MinLengthValidator
 from django.forms import inlineformset_factory
 
+from PIL import Image
 from .models import AdvUser, Review, AdditionalImage, Rebuttal, AdditionalImageReb, ComplaintsAndSuggestions
 from django.utils.translation import gettext_lazy as _
-import datetime
 
 
+
+_MAX_SIZE = 800
 # ------------Authorization-------------
 
 
@@ -128,19 +130,60 @@ class RegisterUserForm(forms.ModelForm):
 
 # -----------Review--------------
 
+class CustomModelForm(forms.ModelForm):
+    def save(self, commit=True):
+        image = super().save(self)
+        filepath = image.image.path
+        width = image.image.width
+        height = image.image.height
+
+        max_size = max(width, height)
+
+        if max_size > _MAX_SIZE:
+            image = Image.open(filepath)
+            image = image.resize(
+                (round(width / max_size * _MAX_SIZE),
+                 round(height / max_size * _MAX_SIZE)),
+                Image.LANCZOS
+            )
+            image.save(filepath)
+
+    class Meta:
+        model = AdditionalImageReb
+        fields = '__all__'
+
 
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = '__all__'
-        widgets = {'author': forms.HiddenInput,
-                   'is_active': forms.HiddenInput,
-                   'is_paid': forms.HiddenInput,
-                   'braintree_id': forms.HiddenInput,
-                   'event_date': forms.DateInput(attrs={'placeholder': 'YYYY-MM-DD'})}
+        widgets = {
+            'title': forms.Textarea(
+                attrs={"placeholder": "Напишите название ПРАВЕДНОГО ГНЕВА...", "id": "name_anger", "spellcheck": "true",
+                       "class": "name_anger", "maxlength": "2000", "rows": "2", "cols": "200"}),
+            'content': forms.Textarea(
+                attrs={"placeholder": "Напишите текст ПРАВЕДНОГО ГНЕВА...", "id": "text_anger", "spellcheck": "true",
+                       "class": "user_rebuttal", "maxlength": "10000", "rows": "2", "cols": "200"}),
+            'country': forms.Textarea(
+                attrs={"placeholder": "Страна", "id": "pay_dop1", "class": "find_width2"}),
+            'city': forms.Textarea(
+                attrs={"placeholder": "Город", "id": "pay_dop2", "class": "find_width2"}),
+            'address': forms.Textarea(
+                attrs={"placeholder": "Адрес далее", "id": "pay_dop3", "class": "find_width3"}),
+            'author': forms.HiddenInput,
+            'price': forms.HiddenInput,
+            'is_active': forms.HiddenInput,
+            'is_paid': forms.HiddenInput,
+            'braintree_id': forms.HiddenInput,
+            'event_date': forms.HiddenInput,
+        }
 
 
-AIFormSet = inlineformset_factory(Review, AdditionalImage, fields='__all__', extra=5)
+AIFormSet = inlineformset_factory(
+    Review, AdditionalImage,
+    fields='__all__', extra=5,
+    form=CustomModelForm
+)
 
 
 # -----------Rebuttal--------------
@@ -158,4 +201,9 @@ class RebuttalForm(forms.ModelForm):
                    'is_paid': forms.HiddenInput}
 
 
-AIRebFormSet = inlineformset_factory(Rebuttal, AdditionalImageReb, fields='__all__', extra=5)
+
+AIRebFormSet = inlineformset_factory(
+    Rebuttal, AdditionalImageReb,
+    fields='__all__', extra=5,
+    form=CustomModelForm
+)

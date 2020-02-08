@@ -1,0 +1,22 @@
+{% extends "main/index.html" %}
+{% load bootstrap4 %}
+
+{% block title %}Pay by credit card{% endblock %}
+
+{% block content %}
+<div style="background: white; margin:auto; margin-top:100px;border:3px solid pink; border-radius: 7px; padding: 30px 50px 40px 50px; width: 460px;">
+    <form name="payment" method="post" action="https://sci.interkassa.com/" accept-charset="UTF-8">
+        <h2>Оплата размещения Праведного гнева "{{rev.title|truncatechars:20}}"</h2>
+        <h3>Сумма платежа: {{rev.price}} rub</h3>
+        <input type="hidden" name="ik_co_id" value="{{ kassa_id }}"/>
+        <input type="hidden" name="ik_pm_no" value="ID_{{ rev.pk }}"/>
+        <input type="hidden" name="ik_am" value="{{ rev.price }}"/>
+        <input type="hidden" name="ik_cur" value="rub"/>
+        <input type="hidden" name="ik_x_id" value="{{ rev.pk }}"/>
+        <input type="hidden" name="ik_desc" value="Review"/>
+        <p>Вы будете перенаправлены на платежную систему</p>
+        <input type="submit" value="Оплатить">
+        <a href="https://pravedgnev.pythonanywhere.com/reviews/">Оплатить позже</a>
+    </form>
+</div>
+{% endblock %}

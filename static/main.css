@@ -416,10 +416,6 @@ body {
   color: white;
   height: 6.51vw;
 }
-.span_price a, .span_name a {
-  text-decoration: none;
-  color: white;
-}
 .block_review10000 {
   background-image: linear-gradient(180deg, #7030a0 0%, #7a34ad 100%);
   opacity: 1;
@@ -513,7 +509,7 @@ body {
   display: flex;
   width: 4.84vw;
   height: 1.82vw;
-  font-size: 18px;
+  font-size: 1.125rem;
   padding: 0.21vw 0.78vw 0.37vw 0.78vw;
   color: black;
   text-align: center;
@@ -568,7 +564,7 @@ body {
   top: 2.5vw;
 }
 #block-find h3 {
-  font-size: 22px;
+  font-size: 1.375rem;
   font-family: 'ArialMT';
   font-weight: 900;
   text-align: center;
@@ -576,7 +572,7 @@ body {
 #block-find p {
   font-family: 'ArialMT';
   font-weight: 900;
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-left: 5.2vw;
 }
 #find_text1 {
@@ -598,7 +594,7 @@ body {
   color: #000;
   cursor: default;
   font-family: 'ArialMT';
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: normal;
   line-height: 1.56vw;
   padding: 0.52vw 0;
@@ -640,7 +636,7 @@ input:checked + #testlb2:before {
   text-align: center;
   border: 0.05vw solid #5b7ea4;
   font-family: 'ArialMT';
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: normal;
 }
 .find-year {
@@ -649,7 +645,7 @@ input:checked + #testlb2:before {
   text-align: center;
   border: 0.05vw solid #5b7ea4;
   font-family: 'ArialMT';
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: normal;
 }
 #find-first {
@@ -690,7 +686,7 @@ input:checked + #testlb2:before {
   display: block;
   width: 6.25vw;
   margin: 1.04vw auto;
-  font-size: 14px;
+  font-size: 0.875rem;
   text-align: center;
   height: 1.04vw;
   line-height: 0px;
@@ -725,7 +721,7 @@ input:checked + #testlb2:before {
   width: 78.96vw;
   height: 34.48vw;
   border: 0px solid #000000;
-  font-size: 16px;
+  font-size: 1rem;
   margin: 0 auto;
   padding: 0;
   z-index: 1;
@@ -769,7 +765,7 @@ input:checked + #testlb2:before {
   border-radius: 0.52vw;
   border: 0.05vw solid black;
   font-family: 'ArialMT';
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .translate:hover {
   cursor: pointer;
@@ -784,7 +780,7 @@ input:checked + #testlb2:before {
 }
 .header4 {
   font-family: 'ArialMT';
-  font-size: 36px;
+  font-size: 2.25rem;
   text-shadow: 0px 0px 0px black;
   color: black;
 }
@@ -814,7 +810,7 @@ input:checked + #testlb2:before {
 .block-review4 span {
   display: block;
   font-family: 'ArialMT';
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 .block-review4 span:hover {
   cursor: default;
@@ -837,7 +833,7 @@ input:checked + #testlb2:before {
   background-color: white;
   overflow: hidden;
   font-family: 'ArialMT';
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.09vw;
   margin: 0;
   /********Что бы не скакала заставка!!!!!!!!!************************/
@@ -868,7 +864,7 @@ input:checked + #testlb2:before {
 .text_review__main {
   color: black;
   font-family: 'ArialMT';
-  font-size: 16px;
+  font-size: 1rem;
   padding: 0.52vw;
   background-color: white;
 }
@@ -897,7 +893,7 @@ input:checked + #testlb2:before {
 .read-position {
   display: flex;
   background-image: linear-gradient(180deg, #9b9b9b 0%, #f5f5f5 100%);
-  font-size: 16px;
+  font-size: 1rem;
   width: 11.46vw;
   height: 3.33vw;
   margin: 0;
@@ -905,7 +901,7 @@ input:checked + #testlb2:before {
 .place-position {
   display: flex;
   background-image: linear-gradient(180deg, #9b9b9b 0%, #f5f5f5 100%);
-  font-size: 16px;
+  font-size: 1rem;
   width: 11.46vw;
   height: 3.33vw;
   margin: 0;
@@ -945,7 +941,7 @@ input:checked + #testlb2:before {
   cursor: pointer;
 }
 .text-photo {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .sl_photo {
   width: 4.69vw;
@@ -968,7 +964,7 @@ input:checked + #testlb2:before {
   align-items: center;
   width: 2.6vw;
   height: 2.6vw;
-  font-size: 30px;
+  font-size: 1.875rem;
   color: #cacaca;
   user-select: none;
 }
@@ -1014,7 +1010,7 @@ input:checked + #testlb2:before {
   display: flex;
   width: 4.84vw;
   height: 1.82vw;
-  font-size: 18px;
+  font-size: 1.125rem;
   padding: 0.21vw 0.78vw 0.37vw 0.78vw;
   color: black;
   text-align: center;
@@ -1050,7 +1046,7 @@ input:checked + #testlb2:before {
   position: relative;
   top: 0.94vw;
   margin: 0 auto;
-  font-size: 16px;
+  font-size: 1rem;
   width: 11.46vw;
   height: 3.33vw;
   background-image: linear-gradient(180deg, #9b9b9b 0%, #f5f5f5 100%);
@@ -1060,7 +1056,7 @@ input:checked + #testlb2:before {
 #save_dop15 {
   width: 9.48vw;
   height: 2.34vw;
-  font-size: 17px;
+  font-size: 1.06rem;
 }
 .view-header2 {
   width: 100%;
@@ -1079,10 +1075,11 @@ input:checked + #testlb2:before {
   height: 21.15vw;
   color: black;
   font-family: 'ArialMT';
-  font-size: 17px;
+  font-size: 1.06rem;
   padding: 0.52vw;
   line-height: 1.3vw;
   background-color: white;
+  resize: none;
 }
 .user_rebuttal:active {
   outline: 0;
@@ -1115,7 +1112,6 @@ input:checked + #testlb2:before {
   line-height: 1.3vw;
   text-align: justify;
   -webkit-user-select: none;
-  resize: none;
 }
 #user_rebuttal2:hover,
 #user_rebuttal3:hover {
@@ -1228,7 +1224,7 @@ input:checked + #testlb2:before {
 }
 .photo-text1 {
   font-family: 'ArialMT';
-  font-size: 25px;
+  font-size: 1.56rem;
   color: black;
   user-select: none;
   font-weight: bold;
@@ -1252,7 +1248,7 @@ input:checked + #testlb2:before {
   font-family: 'ArialMT';
   /*    font-family: 'Rubik One', sans-serif;*/
   /*    font-size: 30px;      */
-  font-size: 25px;
+  font-size: 1.56rem;
   font-weight: bold;
   user-select: none;
   text-align: center;
@@ -1268,7 +1264,7 @@ input:checked + #testlb2:before {
   font-family: 'ArialMT';
   /*    font-family: 'Rubik One', sans-serif;*/
   /*    font-size: 30px;      */
-  font-size: 25px;
+  font-size: 1.56rem;
   font-weight: bold;
   cursor: pointer;
   user-select: none;
@@ -1284,7 +1280,7 @@ input:checked + #testlb2:before {
   font-family: 'ArialMT';
   /*    font-family: 'Rubik One', sans-serif;*/
   /*    font-size: 30px;      */
-  font-size: 25px;
+  font-size: 1.56rem;
   font-weight: bold;
   cursor: pointer;
   user-select: none;
@@ -1300,7 +1296,7 @@ input:checked + #testlb2:before {
   font-family: 'ArialMT';
   /*    font-family: 'Rubik One', sans-serif;*/
   /*    font-size: 30px;      */
-  font-size: 25px;
+  font-size: 1.56rem;
   font-weight: bold;
   cursor: pointer;
   user-select: none;
@@ -1316,7 +1312,7 @@ input:checked + #testlb2:before {
   font-family: 'ArialMT';
   /*    font-family: 'Rubik One', sans-serif;*/
   /*    font-size: 30px;      */
-  font-size: 25px;
+  font-size: 1.56rem;
   font-weight: bold;
   cursor: pointer;
   user-select: none;
@@ -1332,7 +1328,7 @@ input:checked + #testlb2:before {
   font-family: 'ArialMT';
   /*    font-family: 'Rubik One', sans-serif;*/
   /*    font-size: 30px;      */
-  font-size: 25px;
+  font-size: 1.56rem;
   font-weight: bold;
   cursor: pointer;
   user-select: none;
@@ -1348,7 +1344,7 @@ input:checked + #testlb2:before {
   font-family: 'ArialMT';
   /*    font-family: 'Rubik One', sans-serif;*/
   /*    font-size: 30px;      */
-  font-size: 25px;
+  font-size: 1.56rem;
   font-weight: bold;
   cursor: pointer;
   user-select: none;
@@ -1364,7 +1360,7 @@ input:checked + #testlb2:before {
   font-family: 'ArialMT';
   /*    font-family: 'Rubik One', sans-serif;*/
   /*    font-size: 30px;      */
-  font-size: 25px;
+  font-size: 1.56rem;
   font-weight: bold;
   cursor: pointer;
   user-select: none;
@@ -1388,13 +1384,13 @@ input:checked + #testlb2:before {
   border: 0.1vw solid #5b7ea4;
   text-align: center;
   font-family: 'ArialMT';
-  font-size: 16px;
+  font-size: 1rem;
   color: black;
 }
 .text-pay {
   text-align: center;
   font-family: 'ArialMT';
-  font-size: 24px;
+  font-size: 1.5rem;
   color: black;
   line-height: 2.08vw;
   font-weight: bold;
@@ -1419,7 +1415,7 @@ input:checked + #testlb2:before {
   width: 13.02vw;
   height: 1.56vw;
   font-family: 'ArialMT';
-  font-size: 16px;
+  font-size: 1rem;
   color: black;
   text-align: center;
   margin: 0 0 0.52vw 0;
@@ -1443,7 +1439,7 @@ input:checked + #testlb2:before {
   border-radius: 0.52vw;
   color: red;
   font-family: 'ArialMT';
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   background-color: white;
 }
@@ -1456,10 +1452,13 @@ input:checked + #testlb2:before {
   border: 1px solid black;
   border-radius: 0.52vw;
   font-family: 'ArialMT';
-  font-size: 18px;
+  font-size: 1.125rem;
   color: black;
   outline: none;
   padding-left: 0.52vw;
+}
+#change-currency2 {
+  font-size: 1rem;
 }
 .pay-position {
   top: -4.17vw;
@@ -1473,14 +1472,14 @@ input:checked + #testlb2:before {
 .last-position2 {
   display: flex;
   background-image: linear-gradient(180deg, #9b9b9b 0%, #f5f5f5 100%);
-  font-size: 16px;
+  font-size: 1rem;
   width: 11.46vw;
   height: 3.33vw;
   margin: 1.46vw 0 0 33.75vw;
 }
 #text-pay2 {
   position: relative;
-  font-size: 28px;
+  font-size: 1.75rem;
   top: 30%;
   cursor: default;
 }
@@ -1505,7 +1504,7 @@ input:checked + #testlb2:before {
   height: 3.13vw;
   color: black;
   font-family: 'ArialMT';
-  font-size: 17px;
+  font-size: 1.06rem;
   padding: 0.52vw;
   line-height: 1.3vw;
   background-color: white;
@@ -1523,6 +1522,8 @@ input:checked + #testlb2:before {
 }
 #name_anger2 {
   text-align: center;
+  width: 77.7vw;
+  resize: none;
 }
 .view-header10 {
   width: 100%;
@@ -1536,14 +1537,14 @@ input:checked + #testlb2:before {
 }
 .header10 {
   font-family: 'ArialMT';
-  font-size: 36px;
+  font-size: 2.25rem;
   text-shadow: 0px 0px 0px black;
   color: black;
   margin: 0;
 }
 .header11 {
   font-family: 'ArialMT';
-  font-size: 28px;
+  font-size: 1.75rem;
   text-shadow: 0px 0px 0px black;
   color: black;
   text-align: center;
@@ -1594,14 +1595,14 @@ input:checked + #testlb2:before {
   width: 100%;
   height: 100%;
   background-color: rgba(226, 226, 226, 0.9);
-  font-size: 18px;
+  font-size: 1.125rem;
   cursor: default;
 }
 .block-pay--dop {
   width: 30%;
 }
 #header13 {
-  font-size: 24px;
+  font-size: 1.5rem;
   text-align: center;
   height: 2%;
 }
@@ -1615,10 +1616,10 @@ input:checked + #testlb2:before {
   justify-content: space-around;
 }
 .block-pay--dop:first-child {
-  width: 30%;
+  width: 33%;
   justify-content: flex-start;
   margin-top: 4%;
-  padding-left: 5%;
+  padding-left: 2%;
 }
 .block-pay--dop:last-child {
   width: 35%;
@@ -1640,7 +1641,7 @@ input:checked + #testlb2:before {
   height: 20%;
 }
 .pay-form--border:last-child {
-  height: 32%;
+  height: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1659,12 +1660,13 @@ input:checked + #testlb2:before {
   user-select: none;
 }
 #block-pay1 input {
-  width: 15%;
+  width: 20%;
   height: 20%;
   right: 1.04vw;
   text-align: center;
   user-select: none;
   font-weight: 900;
+  font-size: 1rem;
 }
 .pay-buttons {
   display: flex;
@@ -1697,7 +1699,7 @@ input:checked + #testlb2:before {
   color: white;
 }
 #block-summa p:hover {
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 #block-summa {
   display: none;
@@ -1743,7 +1745,7 @@ input:checked + #testlb2:before {
 .block-pay--dop p {
   font-family: 'ArialMT';
   font-weight: normal;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 #summa1 {
   display: flex;
@@ -1767,11 +1769,11 @@ input:checked + #testlb2:before {
 }
 #save13,
 #save14 {
-  width: 7.87vw;
+  width: 8.87vw;
 }
 #save_dop13,
 #save_dop14 {
-  width: 7.55vw;
+  width: 8.55vw;
 }
 .block_review10000_3 {
   background-image: linear-gradient(180deg, #7030a0 0%, #822a8c 100%);
@@ -1838,7 +1840,7 @@ input:checked + #testlb2:before {
 }
 .modalWindow p {
   font-family: 'ArialMT';
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 .modalWindow-container {
   width: 96%;
@@ -1846,7 +1848,7 @@ input:checked + #testlb2:before {
   overflow-y: scroll;
   overflow-x: hidden;
   font-family: 'ArialMT';
-  font-size: 12px;
+  font-size: 0.75rem;
   background-color: white;
   padding-right: 2%;
   opacity: 1;
@@ -1876,7 +1878,7 @@ input:checked + #testlb2:before {
   margin: 0;
   padding: 0;
   font-family: 'ArialMT';
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 .modalWindow-container ul {
   padding-inline-start: 0.52vw;
@@ -1884,11 +1886,11 @@ input:checked + #testlb2:before {
   text-indent: -0.26vw;
 }
 .modalWindow-container h4 {
-  font-size: 16px;
+  font-size: 1rem;
   text-align: center;
 }
 .modalWindow-container h5 {
-  font-size: 14px;
+  font-size: 0.875rem;
   text-align: center;
 }
 .modalWindow-container ul > li:before {
@@ -1904,8 +1906,26 @@ input:checked + #testlb2:before {
   background-color: white;
 }
 #close_button__last2 {
-  font-size: 17px;
+  font-size: 1.06rem;
 }
+#anger-post {
+  display: flex;
+}
+#name_anger,
+#text_anger {
+  resize: none;
+}
+.hide_all_photo {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+}
+.span_price a, .span_name a {
+  text-decoration: none;
+  color: white;
+}
+
 /***************************************************************************************************/
 /**********************************************************************************************/
 /*Эфеект для всех кнопок*/

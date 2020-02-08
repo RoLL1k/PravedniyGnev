@@ -17,6 +17,8 @@ let allPhoto=[];
 let allPhoto4=[];
 let cur_photo2,cur_photo4;
 let rez0,rez0_4;
+let control_last_screen;
+let fullFileName='';
 
 /*Обработка списка выбора языка*/
 select_ul.addEventListener("click", function(e) {      
@@ -262,6 +264,16 @@ function page3() {
 
 function page4() {
    if (document.querySelector('#anger-post')) {
+      document.querySelector('#photo-anger-post').style.display="none";
+      document.querySelector('#block-pay').style.display="none";
+      document.querySelector('#ret12').style.display="none";
+      document.querySelector('#for12').style.display="none";
+      document.querySelector('#ret13').style.display="none";
+      document.querySelector('#save15').style.display="none";
+
+
+
+
 /*************************Функция запрета более 2-х строк в наименовании сообщения****************/
       var textArea = $('#name_anger');
       var maxRows = textArea.attr('rows');
@@ -291,6 +303,38 @@ function page4() {
             }
 
       });
+
+      document.querySelector('#photo_button9').onclick = () => {
+         document.querySelector('#anger-post').style.display="none";
+         document.querySelector('#ret9').style.display="none";
+         document.querySelector('#photo_button9').style.display="none";
+         document.querySelector('#for9').style.display="none";
+
+         document.querySelector('#photo-anger-post').style.display="flex";
+         document.querySelector('#ret12').style.display="flex";
+         document.querySelector('#for12').style.display="flex";
+         page5();
+      }
+      document.querySelector('#for9').onclick = () => {
+         document.querySelector('#anger-post').style.display="none";
+         document.querySelector('#ret9').style.display="none";
+         document.querySelector('#photo_button9').style.display="none";
+         document.querySelector('#for9').style.display="none";
+
+         document.querySelector('#block-pay').style.display="flex";
+         document.querySelector('#ret13').style.display="flex";
+         document.querySelector('#save15').style.display="flex";
+
+         control_last_screen=1;
+         
+
+         loadPhoto();
+
+         page8();
+      }
+
+      
+
    }   
 }   
 /*********************************************************************************************/    
@@ -329,10 +373,10 @@ function page5() {
          evt.stopPropagation();
          evt.preventDefault();
       }
-      function drop(evt) {
+      function drop(evt) {         
          evt.stopPropagation();
          evt.preventDefault(); 
-         let files = event.dataTransfer.files;      
+         let files = event.dataTransfer.files;                
          checkFile5(files);
       }
    /**********************************************************************************************/
@@ -408,12 +452,190 @@ function page5() {
       dz2.addEventListener("click",addPhoto4);
       dz3.addEventListener("click",delPhoto4);
    
+
+      document.querySelector('#ret12').onclick = () => {
+         document.querySelector('#photo-anger-post').style.display="none";
+         document.querySelector('#ret12').style.display="none";
+         document.querySelector('#for12').style.display="none";
+
+
+         document.querySelector('#anger-post').style.display="flex";
+         document.querySelector('#ret9').style.display="flex";
+         document.querySelector('#photo_button9').style.display="flex";
+         document.querySelector('#for9').style.display="flex";
+
+         page4();
+      }
+      document.querySelector('#for12').onclick = () => {
+         document.querySelector('#photo-anger-post').style.display="none";
+         document.querySelector('#ret12').style.display="none";
+         document.querySelector('#for12').style.display="none";
+
+         document.querySelector('#block-pay').style.display="flex";
+         document.querySelector('#ret13').style.display="flex";
+         document.querySelector('#save15').style.display="flex";
+         control_last_screen=2;                  
+
+
+         loadPhoto();
+
+         page8();
+      }
+
            
       slider4();
    
    }
    
 }
+
+function loadPhoto() {
+   for (let a=1;a<=20;a++) {
+      document.querySelector(`#image${a}`).value='';
+   }   
+   for (let a=1;a<=allPhoto4.length;a++) {      
+      document.querySelector(`#image${a}`).value=allPhoto4[a-1];      
+   }      
+}
+
+function checkFile5(rez) {
+   
+   const MAX_WIDTH=800;
+   const MAX_HEIGHT=600;
+   let file=rez[0];     
+   let types=["image/png","image/jpeg","image/gif","image/webp","image/svg+xml"];   
+   if (types.indexOf((file.type))<0) {       
+       document.querySelector('#photo-text12').innerHTML='Неверный формат файла.<br />Выберите другое изображение.';       
+       return;
+   }
+   if (file.size>10485760) {       
+       document.querySelector('#photo-text12').innerHTML='Размер файла превышает допустимые 10МБ.<br />Выберите другое изображение.';       
+       return;
+   }
+   var fileReader=new FileReader();
+   fileReader.onload=function(progressEvent) {
+      var url=fileReader.result;    
+      
+      var myImg=document.getElementById("myimage12");
+      myImg.src=url;
+      myImg.onerror=function() {
+         document.querySelector('#photo-text12').innerHTML='Формат не поддерживается браузером.<br />Выберите другое изображение.';                  
+         return;
+      }
+      myImg.onload=function() {
+
+         var img = document.getElementById('myimage12');
+         if ((img.width>MAX_WIDTH) || (img.height>MAX_HEIGHT)) {
+            var scalingFactor=Math.min((MAX_WIDTH/img.width),(MAX_HEIGHT/img.height));    
+            var iw=img.width*scalingFactor;
+            var ih=img.height*scalingFactor;    
+            var c=document.createElement('canvas');
+            var ctx=c.getContext('2d');    
+            c.width=iw;
+            c.height=ih;
+            if (c.width>c.height) {
+               
+               if ((window.screen.width)>1680) {
+                  document.querySelector('#real-container--photo12').style.width="600px";
+                  document.querySelector('#real-container--photo12').style.height="422px";
+               }
+               if (((window.screen.width)<=1680) && ((window.screen.width)>1440)) {
+                  document.querySelector('#real-container--photo12').style.width="525px";
+                  document.querySelector('#real-container--photo12').style.height="369px";
+               }
+               if (((window.screen.width)<=1440) && ((window.screen.width)>1280)) {
+                  document.querySelector('#real-container--photo12').style.width="450px";
+                  document.querySelector('#real-container--photo12').style.height="316px";
+               }
+               if (((window.screen.width)<=1280) && ((window.screen.width)>1024)) {
+                  document.querySelector('#real-container--photo12').style.width="400px";
+                  document.querySelector('#real-container--photo12').style.height="281px";
+               }
+               if (((window.screen.width)<=1024) && ((window.screen.width)>800)) {
+                  document.querySelector('#real-container--photo12').style.width="320px";
+                  document.querySelector('#real-container--photo12').style.height="225px";
+               }
+               if ((window.screen.width)<=800) {
+                  document.querySelector('#real-container--photo12').style.width="250px";
+                  document.querySelector('#real-container--photo12').style.height="175px";
+               }
+
+
+               
+            }
+            else {
+               
+               let dop_height2=parseInt(getComputedStyle(document.querySelector('#real-container--photo12')).height);
+               document.querySelector('#real-container--photo12').style.width=`${(dop_height2*c.width)/c.height}px`;
+               
+            }           
+            ctx.drawImage(img,0,0,iw,ih);
+            rez0_4=c.toDataURL("image/png");     
+         }
+         else {
+            rez0_4=img.src;
+            if (img.width>img.height) {
+               
+               if ((window.screen.width)>1680) {
+                  document.querySelector('#real-container--photo12').style.width="600px";
+                  document.querySelector('#real-container--photo12').style.height="422px";
+               }
+               if (((window.screen.width)<=1680) && ((window.screen.width)>1440)) {
+                  document.querySelector('#real-container--photo12').style.width="525px";
+                  document.querySelector('#real-container--photo12').style.height="369px";
+               }
+               if (((window.screen.width)<=1440) && ((window.screen.width)>1280)) {
+                  document.querySelector('#real-container--photo12').style.width="450px";
+                  document.querySelector('#real-container--photo12').style.height="316px";
+               }
+               if (((window.screen.width)<=1280) && ((window.screen.width)>1024)) {
+                  document.querySelector('#real-container--photo12').style.width="400px";
+                  document.querySelector('#real-container--photo12').style.height="281px";
+               }
+               if (((window.screen.width)<=1024) && ((window.screen.width)>800)) {
+                  document.querySelector('#real-container--photo12').style.width="320px";
+                  document.querySelector('#real-container--photo12').style.height="225px";
+               }
+               if ((window.screen.width)<=800) {
+                  document.querySelector('#real-container--photo12').style.width="250px";
+                  document.querySelector('#real-container--photo12').style.height="175px";
+               }
+
+               
+            }
+            else {
+               
+               let dop_height=parseInt(getComputedStyle(document.querySelector('#real-container--photo12')).height);
+               document.querySelector('#real-container--photo12').style.width=`${(dop_height*img.width)/img.height}px`;
+               
+            }       
+         }  
+         if (allPhoto4.indexOf(rez0_4)>-1) {
+            document.querySelector('#photo-text12').innerHTML='Изображение уже загружено.<br />Выберите другое изображение.';
+            rez0_4='';
+            document.querySelector('#real-container--photo12').style.backgroundImage=`none`;
+            return;
+         }
+         else {            
+            document.querySelector('#real-container--photo12').style.backgroundImage=`url(${rez0_4})`;
+
+            
+            document.querySelector('#photo-text12').innerHTML=``;           
+            show_button2(document.querySelector("#change_dop13"));
+            show_button2(document.querySelector("#change_dop14"));
+         }       
+      }           
+
+      if (globalImageControl4>0) {
+         document.querySelector(`#photo${globalImageControl4}_4`).style.border="2px solid #5b7ea4";                        
+         globalImageControl4=0;           
+      }                   
+   }
+
+   
+   fileReader.readAsDataURL(file);
+}
+
 
 function page6() {
    if (document.querySelector('#photo-rebuttal--post')) {
@@ -581,7 +803,10 @@ function page7() {
 }
 
 function page8() {
-   if (document.querySelector('#block-pay')) {     
+   if (document.querySelector('#block-pay')) {    
+       
+      createDate(document.querySelector('.find-year').value,document.querySelector('.find-mon').value);
+      createCurrency();  
       
       control_current_screen=13;     
 
@@ -604,22 +829,22 @@ function page8() {
       
    
       document.querySelector("#save15").onclick=()=> {
-         if (document.querySelector("#save_dop15").className!="none_button") {
+/*         if (document.querySelector("#save_dop15").className!="none_button") {
             let pattern=/^[0-9a-z_-]+@[0-9a-z_-]+\.[a-z]{2,5}$/i;
             let mail_value=document.querySelector('#mail2');      
             if (mail_value.value.length>0) {
-               if (pattern.test(mail_value.value)==true) {
+               if (pattern.test(mail_value.value)==true) {*/
 /*                  screen3_3();*/
-               } else {         
+/*               } else {         
                   mail_value.style.border="1px solid red";      
                   setTimeout(function(){ 
                      mail_value.style.border="1px solid #5b7ea4";   
                   },200);
                }     
-            } else {
+            } else {*/
 /*               screen3_3();*/
-            }   
-         }   
+/*            }   
+         }   */
       }
    
       document.querySelector("#butWindow1").onclick=()=> {
@@ -663,8 +888,64 @@ function page8() {
          document.querySelector("#mainWindow3").style.display="none";
       }  
 
+      document.querySelector('.find-year').onchange = () => {
+         createDate(document.querySelector('.find-year').value,document.querySelector('.find-mon').value);
+         
+         /*document.querySelector('#id_event_date').value=*/
+      }
+      
+
+      document.querySelector('#ret13').onclick = () => {
+
+         document.querySelector('#block-pay').style.display="none";
+         document.querySelector('#ret13').style.display="none";
+         document.querySelector('#save15').style.display="none";
+
+         if (control_last_screen==1) {
+            document.querySelector('#anger-post').style.display="flex";
+            document.querySelector('#ret9').style.display="flex";
+            document.querySelector('#photo_button9').style.display="flex";
+            document.querySelector('#for9').style.display="flex";
+   
+            page4();
+
+         } else {
+            document.querySelector('#photo-anger-post').style.display="flex";
+            document.querySelector('#ret12').style.display="flex";
+            document.querySelector('#for12').style.display="flex";            
+
+            page5();
+
+         }
+      }      
 
    }   
+}
+
+
+function createDate(year,month) {
+   let month2;
+   month2 = document.querySelectorAll('#pay-first option');
+   let count = 0;
+   for (let a of month2) {    
+      count++;
+      if (a.value == month) {
+         break;
+      }      
+   }   
+   if (count < 10) count = '0'+count;
+   document.querySelector('#id_event_date').value = (year + '-' + `${count}` + '-' + '01');   
+} 
+
+function createCurrency() {
+   let dz = document.querySelector('#valueSumma').innerHTML;
+   let priceRez='';
+   for (let a = 0; a < dz.length; a++) {
+      if ((+dz[a]>=0) && (+dz[a]<=9) && (dz[a]!=' ')) {
+         priceRez+=dz[a];
+      }
+   }   
+   document.querySelector('#id_price').value = +priceRez;   
 }
 
 
@@ -711,7 +992,8 @@ function changeCurrency() {
             countResult++;
          }   
          break;            
-   }
+   }   
+   createCurrency();  
    return false;
 }
 
@@ -818,7 +1100,8 @@ function addPhoto4() {
          cur_photo4=allPhoto4.length-4;
       } else {
          cur_photo4=0;
-      }      
+      }   
+
       slider4();
    }      
 }
@@ -978,6 +1261,7 @@ function addList_rebuttal4(e) {
       document.querySelector(`#${this_photo}`).style.border="2px solid red"; 
       document.querySelector('#real-container--photo12').style.backgroundImage=`url(${img.src})`;
       rez0_4=img.src;
+   
    };
    img.src=globalImages4[num-1];   
 
@@ -1104,12 +1388,13 @@ function delPhoto4() {
 
 
 
-function checkFile4(evt) {    
-   
+function checkFile4(evt) {        
+
    const MAX_WIDTH=800;
    const MAX_HEIGHT=600;
-   let file=event.target.files[0];     
-
+   let file=event.target.files[0]; 
+   
+   
    document.querySelector(`#${event.target.id}`).value='';
    document.getElementById(`${event.target.id}`).removeEventListener('change', checkFile4, false);
    let types=["image/png","image/jpeg","image/gif","image/webp","image/svg+xml"];   
@@ -1242,12 +1527,6 @@ function checkFile4(evt) {
    fileReader.readAsDataURL(file);
    
 }
-
-
-
-
-
-
 
 
 /******************************Функция работы слайдера в слайдер!!!*******************************/

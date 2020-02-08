@@ -1,4 +1,4 @@
-﻿{% extends "main/index.html" %}
+{% extends "main/index.html" %}
 
 
 {% block content %}
@@ -20,6 +20,8 @@
         </div>
     </form>
     <p class="form-text last last-position"><a href="{% url 'ReviewApp:password_reset' %}">Забыли пароль?</a><span>&brvbar;</span><a href="{% url 'ReviewApp:register' %}">Регистрация</a></p>
+    <!--<p class="form-text last" id="elem1"><a href="{% url 'ReviewApp:password_reset' %}">Забыли пароль?</a></p>-->
+    <!--<p class="form-text last" id="elem2"><a href="{% url 'ReviewApp:register' %}">Регистрация</a></p>-->
 </div>
 {% endblock %}
 

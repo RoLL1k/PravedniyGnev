@@ -12,7 +12,9 @@
                         <span class="block_review{{rev.price}} test_hight block_review_line" >
                             <span class="span_prom"></span>
                             <span class="span_price" id="spanPrices"><a href="{% url 'ReviewApp:get_review_detail' pk=rev.pk %}">Оплачено за размещение {{ rev.price }} руб.</a></span>
+                            <!--{% url 'ReviewApp:get_review_detail' pk=rev.pk %}-->
                             <span class="span_name" id="targetName"><a href="{% url 'ReviewApp:get_review_detail' pk=rev.pk %}">{{ rev.title }}</a></span>
+                            <!--{% url 'ReviewApp:get_review_detail' pk=rev.pk %}-->
                             <span class="span_prom2"></span>
                         </span>
                         {% endif %}

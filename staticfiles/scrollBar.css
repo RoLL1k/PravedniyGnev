@@ -1,0 +1,152 @@
+.sb-container{  
+    position: relative;
+    overflow-y: visible;/*vidden*/
+    overflow-x: visible;
+    padding-right: 0.52vw;
+    -moz-border-radius: 2.87vw 2.87vw 2.87vw 2.87vw;
+    border-radius: 2.87vw 2.87vw 2.87vw 2.87vw;
+    width:100%;
+}
+.sb-content {
+  height:100%;
+  width: 99.7%;
+  padding-right: 0%;
+  overflow-y: visible;
+  overflow-x: hidden; /*hidden*/
+  box-sizing:border-box;
+  -moz-border-radius: 2.87vw 3.9vw 3.9vw 2.87vw;
+  border-radius: 2.87vw 3.9vw 3.9vw 2.87vw;
+
+}
+.sb-scrollbar-container {
+/*    width: 1.35vw;
+    height:33.44vw; */
+    width: 24px;
+    height: 33.94vw;
+    background-color: white;
+    border-radius: 1.31vw;
+    overflow: hidden;
+    z-index: 10000;
+}
+/*.sb-container-noscroll .sb-scrollbar-container {
+    right: -20px;
+}*/
+
+
+.sb-scrollbar {
+  position: absolute;
+  right: 0;
+/*  height: 1.56vw;
+  width: 1.35vw;*/
+  height: 30px;
+  width: 26px;
+  background: rgba(50, 50, 50, 0.5);
+}
+
+.sb-scrollbar:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+/*@media (max-width: 1680px) {
+  .sb-container {
+    padding-right: 9px;
+    border-radius: 49px 49px 49px 49px;
+    -moz-border-radius: 49px 49px 49px 49px;
+  }
+  .sb-scrollbar-container {
+    width: 23px;
+    height:567px;
+    border-radius: 5px;
+  }
+  .sb-scrollbar {
+    height: 27px;
+    width: 23px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .sb-container {
+    padding-right: 7.5px;
+    border-radius: 41px 41px 41px 41px;
+    -moz-border-radius: 41px 41px 41px 41px;
+  }
+  .sb-scrollbar-container {
+    width: 19px;
+    height:481.5px;
+    border-radius: 4.5px;
+  }
+  .sb-scrollbar {
+    height: 22.5px;
+    width: 19px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .sb-container {
+    padding-right: 7.3px;
+    border-radius: 40px 40px 40px 40px;
+    -moz-border-radius: 40px 40px 40px 40px;
+  }
+  .sb-scrollbar-container {
+    width: 19px;
+    height:481.5px;
+    border-radius: 4.5px;
+  }
+  .sb-scrollbar {
+    height: 22.5px;
+    width: 19px;
+  }
+}
+
+
+@media (max-width: 1280px) {
+  .sb-container {
+    padding-right: 6.7px;
+    border-radius: 37px 37px 37px 37px;
+    -moz-border-radius: 37px 37px 37px 37px;
+  }
+  .sb-scrollbar-container {
+    width: 19px;
+    height:428px;
+    border-radius: 4px;
+  }
+  .sb-scrollbar {
+    height: 20px;
+    width: 19px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sb-container {
+    padding-right: 5px;
+    border-radius: 29px 29px 29px 29px;
+    -moz-border-radius: 29px 29px 29px 29px;
+  }
+  .sb-scrollbar-container {
+    width: 18px;
+    height:349px;
+    border-radius: 3px;
+  }
+  .sb-scrollbar {
+    height: 16px;
+    width: 18px;
+  }
+}
+
+@media (max-width: 800px) {
+  .sb-container {
+    padding-right: 4px;
+    border-radius: 23px 23px 23px 23px;
+    -moz-border-radius: 23px 23px 23px 23px;
+  }
+  .sb-scrollbar-container {
+    width: 17px;
+    height:267.5px;
+    border-radius: 2.5px;
+  }
+  .sb-scrollbar {
+    height: 12.5px;
+    width: 17px;
+  }
+}  */

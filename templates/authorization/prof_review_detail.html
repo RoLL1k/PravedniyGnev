@@ -15,11 +15,11 @@
         <p>Стоимость: {{ rev.price }} руб.</p>
         <p>{{ rev.author }} - {{ rev.created_at }}</p>
         <div style="background-color: orange; width: 1000px; margin: auto;">
-
+            {% if not rev.is_paid %}
+                <p>Ваш Праведный гнев еще не оплачен, он не виден другим пользователям</p>
+                <p><a href="{% url 'payment:get_payment_form' pk=rev.pk %}">Оплатить</a></p>
+            {% endif %}
             <p><a href="{% url 'ReviewApp:rev_prof_rebuttals_on_me' pk=rev.pk %}">Список опровержений</a></p>
-<!--            {% if user.pk != rev.author.pk %}-->
-<!--            <p><a href="{% url 'ReviewApp:add_rebuttal' pk=rev.pk %}">Оставить опровержение</a></p>-->
-<!--            {% endif %}-->
             <p><a href="{% url 'ReviewApp:rev_prof_delete' pk=rev.pk %}">Удалить отзыв(на общих основаниях)</a></p>
 
         </div>

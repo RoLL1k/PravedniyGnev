@@ -20,46 +20,46 @@
     font-size: 1.6rem;
     font-family: 'ArialMT';
     font-weight: 900;
-    text-align: center;
-    margin:1.5vw 0 0.8vw 0;
+    text-align: center;   
+    margin:1.5vw 0 0.8vw 0;     
 }
-.form-text--input {
+.form-text--input {        
     display: block;
-    width:25vw;
+    width:25vw;       
     height:3vw;
     border: 1px solid #5b7ea4;
     border-radius: 1vw;
-    font-family: 'ArialMT';
+    font-family: 'ArialMT';    
     outline: none;
     font-size: 1.4rem;
     padding: 0 0.5vw;
     margin:2vw auto;
     text-align: center;
 }
-.form-text--input2 {
+.form-text--input2 {        
     display: block;
-    width:60%;
+    width:60%;       
     height:2.5vw;
     border: 1px solid #5b7ea4;
     border-radius: 1vw;
-    font-family: 'ArialMT';
+    font-family: 'ArialMT';    
     outline: none;
-    font-size: 1.4rem;
+    font-size: 1.4rem;     
     padding:0 0.5vw;
     text-align: center;
 }
-.form-text--input3 {
+.form-text--input3 {        
     display: block;
-    width:84%;
+    width:84%;       
     height:12vw;
     border: 1px solid #5b7ea4;
     border-radius: 1vw;
-    font-family: 'ArialMT';
+    font-family: 'ArialMT';    
     outline: none;
-    font-size: 1.4rem;
+    font-size: 1.4rem;     
     padding:0 0.5vw;
     text-align: left;
-    resize: none;
+    resize: none;    
     margin: 0 auto;
 }
 .form-text {
@@ -67,17 +67,17 @@
     font-size: 1.4rem;
     width:8vw;
     height:2.5vw;
-    margin:0.2vw 0.5vw 0 0;
-    text-align: left;
+    margin:0.2vw 0.5vw 0 0;   
+    text-align: left;    
 }
 .form-text3 {
     display: block;
     font-size: 1.4rem;
-
+    
     height:2.5vw;
-    margin: 0.5vw 0 0 0;
-    text-align: center;
-
+    margin: 0.5vw 0 0 0;   
+    text-align: center;    
+    
 }
 
 .form-text--input2--position {
@@ -93,27 +93,27 @@
 }
 .form-flex {
     display:flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
     justify-content: center;
-    align-items: center;
+    align-items: center;    
     height:25vw;
-
-}
+    
+}    
 #field1 {
     margin-top:5vw;
 }
 
 .punch-form {
     display:flex;
-    position: relative;
+    position: relative;    
     width:12vw;
     height:3.9vw;
     background: #f5f5f5;
     align-items: center;
     justify-content: center;
-    border-radius: 0.5vw;
+    border-radius: 0.5vw;        
     margin:0 auto;
-    z-index: 2000;
+    z-index: 2000;    
 }
 .punch-button--form {
     display:flex;
@@ -125,14 +125,14 @@
     text-align:center;
     justify-content: center;
     align-items: center;
-    font-family: 'ArialMT';
+    font-family: 'ArialMT';    
     font-style: normal;
     font-smoothing: antialiased;
     text-decoration: none;
 /*    text-shadow: 0 -1px 1px rgba(0,0,0,0.50);*/
     text-shadow: none;
     outline:none;
-    border-radius: 0.5vw;
+    border-radius: 0.5vw;    
     border-top: 1px solid rgba(0,0,0,0.001);
     border: 1px solid rgba(0,0,0,0.50);
     box-shadow: 0 0 0.5vw rgba(0,0,0,0.35), 0px 0.05vw 0.15vw rgba(0,0,0,0.18), inset 0px -0.15vw 0px rgba(0,0,0,0.35), inset 0px 0.73vw 0.73vw rgba(255,255,255,0.10);
@@ -143,8 +143,9 @@
 }
 .last-position {
     position: absolute;
-    bottom:2vw;
+    bottom: 2vw;
 }
+
 .punch-button--form:hover {
     box-shadow: 0 0 0.5vw rgba(0,0,0,0.35), 0px 0.05vw 0.15vw rgba(0,0,0,0.18), inset 0px -0.15vw 0px rgba(0,0,0,0.35), inset 0px 0.73vw 0.73vw rgba(255,255,255,0.25);
     -webkit-animation: glow 1s infinite ease-in-out;
@@ -156,18 +157,18 @@
     box-shadow: 0 0 0.5vw rgba(0,0,0,0.35), 0px 0.1vw 0.05vw rgba(255,255,255,0.50), inset 0px 0.05vw 2vw rgba(0,0,0,0.35), inset 0px -0.73vw 0.73vw rgba(255,255,255,0.10);
     -webkit-animation: none;
     cursor: pointer !important;
-}
+} 
 .form-text--input3::placeholder {
     text-align: center;
     padding-top: 4vw;
 }
 .allErrors {
     width: 65%;
-    position: relative;
+    position: relative;    
     height: 2vw;
     color: red;
     font-size: 1rem;
-    font-family: 'ArialMT';
+    font-family: 'ArialMT';   
     margin: 0 auto;
     padding: 0;
     top: -1.5vw;
@@ -180,7 +181,7 @@
     color: red;
     font-size: 1rem;
     margin: 0 auto;
-    top: -1vw;
+    top: -1vw;    
 }
 #form2-autor ul {
     position: relative;
@@ -190,7 +191,7 @@
     color: red;
     font-size: 1rem;
     margin: 0 auto;
-    padding-left: 30%;
+    padding-left: 30%;    
     padding-right: 5%;
 }
 #form2-autor {
@@ -207,6 +208,20 @@
 }
 #button3-form--position {
     top: 1vw;
+}
+#elem1 {
+    position: absolute;
+/*    background-color: red;*/
+    width: 20vw;
+    left: 1vw;
+    text-align: left;
+}
+#elem2 {
+    position: absolute;
+/*    background-color: blue;*/
+    width: 20vw;
+    right: 1vw;
+    text-align: right;
 }
 input:-moz-placeholder {
     text-align: center;
